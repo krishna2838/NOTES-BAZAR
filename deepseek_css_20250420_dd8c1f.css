@@ -1,0 +1,428 @@
+/* ===== BASE STYLES ===== */
+:root {
+  --physics: #8e44ad;
+  --chemistry: #3498db;
+  --maths: #e74c3c;
+  --primary: #2c3e50;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  display: flex;
+  padding: 1rem 5%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.logo i {
+  margin-right: 0.5rem;
+}
+
+.search-bar {
+  flex: 1;
+  margin: 0 2rem;
+  display: flex;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+}
+
+#searchBtn {
+  background: var(--physics);
+  color: white;
+  border: none;
+  padding: 0 1rem;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+#cartCount {
+  background: var(--chemistry);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50%;
+  font-size: 0.8rem;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  padding: 4rem 5%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero:before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: pulse 15s infinite linear;
+}
+
+@keyframes pulse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero-content {
+  flex: 1;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-physics { color: #ff9a9e; }
+.hero-chemistry { color: #a1c4fd; }
+.hero-maths { color: #fbc2eb; }
+.highlight {
+  background: linear-gradient(90deg, #fff 0%, #ffd700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-hero {
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.btn-hero:hover {
+  transform: translateY(-3px);
+}
+
+.btn-physics {
+  background: var(--physics);
+  color: white;
+}
+
+.btn-chemistry {
+  background: white;
+  color: var(--chemistry);
+}
+
+.hero-image {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===== SUBJECT SECTIONS ===== */
+.subject-section {
+  padding: 4rem 5%;
+}
+
+.subject-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  border-bottom: 3px solid;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+#physics h2 {
+  border-color: var(--physics);
+}
+
+#chemistry h2 {
+  border-color: var(--chemistry);
+}
+
+#maths h2 {
+  border-color: var(--maths);
+}
+
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chapter-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  border-top: 4px solid;
+  transition: all 0.3s ease;
+}
+
+.chapter-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+#physics .chapter-card {
+  border-top-color: var(--physics);
+}
+
+#chemistry .chapter-card {
+  border-top-color: var(--chemistry);
+}
+
+#maths .chapter-card {
+  border-top-color: var(--maths);
+}
+
+.chapter-card h3 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.chapter-card h3:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--primary);
+}
+
+.chapter-card ul {
+  list-style: none;
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+}
+
+.chapter-card ul li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.chapter-card ul li:before {
+  content: "•";
+  color: var(--primary);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.btn-preview, .btn-add-to-cart {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+}
+
+.btn-preview {
+  background: #f8f9fa;
+  color: var(--primary);
+  border: 1px solid #ddd;
+}
+
+.btn-preview:hover {
+  background: #e9ecef;
+}
+
+.btn-add-to-cart {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-add-to-cart:hover {
+  background: #1a252f;
+}
+
+.btn-bundle {
+  background: var(--physics);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: all 0.3s;
+}
+
+.btn-bundle:hover {
+  transform: scale(1.05);
+}
+
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: white;
+  margin: 5% auto;
+  padding: 1rem;
+  width: 80%;
+  max-width: 900px;
+  border-radius: 10px;
+  animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#pdfViewer {
+  width: 100%;
+  height: 80vh;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .search-bar {
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-image {
+    margin-top: 2rem;
+  }
+
+  .chapters-grid {
+    grid-template-columns: 1fr;
+  }
+}

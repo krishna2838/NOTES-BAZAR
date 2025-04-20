@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful | PCM Pro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="success-container">
+    <div class="success-card">
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h2>Payment Successful!</h2>
+      <p>Your notes are ready to download. We've also sent them to your email.</p>
+      <div class="download-links">
+        <a href="#" class="btn-download">
+          <i class="fas fa-download"></i> Download Physics Notes
+        </a>
+        <a href="#" class="btn-download">
+          <i class="fas fa-download"></i> Download Chemistry Notes
+        </a>
+        <a href="#" class="btn-download">
+          <i class="fas fa-download"></i> Download Maths Notes
+        </a>
+      </div>
+      <a href="index.html" class="btn-home">
+        <i class="fas fa-home"></i> Back to Home
+      </a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  <script>
+    // Celebrate with confetti!
+    confetti({
+      particleCount: 150,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  </script>
+</body>
+</html>
